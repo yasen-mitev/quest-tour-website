@@ -1,0 +1,50 @@
+name: Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  # Every push and PR: the committed pages must match the templates and the config.
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rendered pages match the templates and the config
+        run: |
+          python3 build.py
+          git diff --exit-code -- index.html privacy.html terms.html
+      - name: No unresolved placeholders
+        run: '! grep -l "{{" index.html privacy.html terms.html'
+
+  # main only: publish the repository root to GitHub Pages.
+  # Needs Pages enabled in the repository settings with "GitHub Actions" as the source.
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
