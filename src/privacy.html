@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy · {{site.name}}</title>
+<meta name="description" content="What {{site.name}} collects from hosts and players, why, for how long, and who else touches it.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <!-- brand mark: a map pin holding a church cupola (design/logos.html, mark B) -->
+    <symbol id="mark" viewBox="0 0 96 96">
+      <path d="M48 92 C48 92 14 60 14 38 a34 34 0 0 1 68 0 C82 60 48 92 48 92 Z" fill="var(--m1)"/>
+      <rect x="46.5" y="11" width="3" height="10" fill="var(--m2)"/><rect x="42.5" y="14" width="11" height="2.6" fill="var(--m2)"/>
+      <path d="M33 42 C33 30 40 23 48 22 C56 23 63 30 63 42 Z" fill="var(--m2)"/>
+      <rect x="34" y="42" width="28" height="13" fill="var(--m2)"/>
+      <path d="M40 55 V50 a3 3 0 0 1 6 0 V55 Z" fill="var(--m1)"/><path d="M50 55 V50 a3 3 0 0 1 6 0 V55 Z" fill="var(--m1)"/>
+    </symbol>
+</defs></svg>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><svg aria-hidden="true"><use href="#mark"/></svg>{{site.name}}</a>
+  <ul class="nav-links" style="display:flex"><li><a href="index.html#how">How it plays</a></li><li><a href="index.html#who">Who it is for</a></li><li><a href="terms.html">Terms</a></li></ul>
+</div></header>
+<main class="doc"><div class="wrap">
+  <p class="eyebrow eyebrow--muted">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated {{legal.updated}} · Applies to the website and the player app.</p>
+  <p>This page is a template for the policy the host of the service has to publish. The headings are the ones a GDPR policy needs; the text under each one must be written and read by the person who is accountable for the service.</p>
+  <h2>Who is responsible</h2><p>{{host.name}}, {{host.organisation}}, {{host.address}}, reachable at the contact address below.</p>
+  <h2>What we collect, and why</h2>
+  <ul>
+    <li><strong>Host accounts:</strong> name, email address and password hash, to sign in and to send confirmation and password-reset emails.</li>
+    <li><strong>Game content:</strong> landmarks, riddles, team names and the first names of participants, entered by the host to run a game.</li>
+    <li><strong>Game runs:</strong> answers, timings, hints and penalties, to run the clock and the leaderboard.</li>
+    <li><strong>Team photos:</strong> taken by players at each landmark and kept at original quality for the host's album.</li>
+    <li><strong>Technical logs:</strong> IP address and browser, kept briefly to keep the service running and secure.</li>
+  </ul>
+  <h2>How long we keep it</h2><p>Game data and photos stay until the host deletes them or closes the account; logs are deleted after {{legal.log_retention_days}} days.</p>
+  <h2 id="cookies">Cookies</h2><p>The app uses one essential cookie-free session mechanism (the team link). The website uses no analytics cookies unless you accept them in the cookie notice.</p>
+  <h2>Who else touches the data</h2><p>Sub-processors: {{legal.hosting}}, {{legal.email_provider}}. Each one is listed with its purpose and location.</p>
+  <h2 id="rights">Your rights</h2><p>You can ask for access to, correction of, or deletion of your data, and object to its use, by writing to the contact address. We answer within one month.</p>
+  <h2 id="contact">Contact</h2><p><a href="mailto:{{mail.privacy}}">{{mail.privacy}}</a> · {{host.address}}</p>
+</div></main>
+<footer class="footer"><div class="wrap footer-foot" style="margin-top:0;padding-top:0;border:0"><span>© 2026 {{site.name}}</span><span><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a></span></div></footer>
+</body>
+</html>

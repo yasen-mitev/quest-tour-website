@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quest City Tour Marks</title>
+<meta name="description" content="Six logo marks for Quest City Tour to choose from, each shown on patina, on the light surface, at favicon sizes and next to the wordmark.">
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+  /* Each mark is one SVG drawn with three roles: --m1 main shape, --m2 accent, --m3 ground detail.
+     The roles swap per context, so one file serves the patina band, the light surface and the favicon. */
+  .on-dark { --m1: var(--gold-500); --m2: var(--ink-inverse); --m3: var(--patina-300); background: var(--accent-strong); color: var(--ink-inverse); }
+  .on-light { --m1: var(--patina-800); --m2: var(--gold-500); --m3: var(--patina-300); background: var(--surface-raised); color: var(--ink); }
+  .on-gold { --m1: var(--patina-800); --m2: var(--ink-inverse); --m3: var(--patina-600); background: var(--gold-500); color: var(--ink); }
+  .page { padding-block: var(--space-6) var(--space-9); }
+  .intro { display: grid; gap: var(--space-3); margin-bottom: var(--space-6); max-width: 70ch; }
+  .intro .t-lead { color: var(--ink-muted); }
+  .marks { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--space-5); }
+  .mark { background: var(--surface-raised); border-radius: var(--radius-lg); box-shadow: var(--shadow-raised); overflow: hidden; display: grid; grid-template-rows: auto auto 1fr; }
+  .mark-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-3); padding: var(--space-4) var(--space-5) 0; }
+  .mark-head h2 { font: 800 22px/28px var(--font-display); letter-spacing: -0.02em; }
+  .mark-head .step-no { font: 700 15px/20px var(--font-mono); color: var(--ink-muted); }
+  .swatches { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; margin: var(--space-4) var(--space-5) 0; border-radius: var(--radius-md); overflow: hidden; }
+  .sw { display: grid; place-items: center; aspect-ratio: 1; }
+  .sw svg { width: 60%; height: 60%; }
+  .lockup { display: flex; align-items: center; gap: 12px; padding: 0 var(--space-5); margin-top: var(--space-4); font: 800 24px/28px var(--font-display); letter-spacing: -0.025em; color: var(--ink); }
+  .lockup svg { width: 36px; height: 36px; --m1: var(--patina-800); --m2: var(--gold-500); --m3: var(--patina-300); }
+  .sizes { display: flex; align-items: center; gap: var(--space-4); padding: var(--space-3) var(--space-5); margin: var(--space-4) var(--space-5) 0; border-radius: var(--radius-md); }
+  .sizes span { display: grid; gap: 4px; justify-items: center; font: 400 12px/16px var(--font-mono); opacity: .8; }
+  .sizes .s32 svg { width: 32px; height: 32px; } .sizes .s24 svg { width: 24px; height: 24px; } .sizes .s16 svg { width: 16px; height: 16px; }
+  .sizes .tab { margin-left: auto; display: flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 8px 8px 0 0; background: var(--surface); color: var(--ink); font: 400 13px/16px var(--font-sans); }
+  .tab svg { width: 16px; height: 16px; --m1: var(--patina-800); --m2: var(--gold-500); --m3: var(--patina-300); }
+  .mark p { padding: var(--space-4) var(--space-5) var(--space-5); color: var(--ink-muted); align-self: end; }
+  .mark p b { color: var(--ink); }
+  .how { margin-top: var(--space-7); display: grid; gap: var(--space-3); max-width: 70ch; }
+  .how ol { margin: 0; padding-left: 22px; display: grid; gap: var(--space-2); color: var(--ink-muted); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <!-- A · Dome: the app's own loading mark -->
+  <symbol id="m-a" viewBox="0 0 96 96">
+    <path d="M26 70 V52 a22 22 0 0 1 44 0 V70 Z" fill="var(--m1)"/>
+    <rect x="46" y="18" width="4" height="14" fill="var(--m1)"/><rect x="41" y="23" width="14" height="3.5" fill="var(--m1)"/>
+    <rect x="20" y="70" width="56" height="7" rx="2.5" fill="var(--m3)"/>
+  </symbol>
+  <!-- B · Pin: a map pin holding a church dome: cupola on a drum with two arched windows and the cross -->
+  <symbol id="m-b" viewBox="0 0 96 96">
+    <path d="M48 92 C48 92 14 60 14 38 a34 34 0 0 1 68 0 C82 60 48 92 48 92 Z" fill="var(--m1)"/>
+    <rect x="46.5" y="11" width="3" height="10" fill="var(--m2)"/><rect x="42.5" y="14" width="11" height="2.6" fill="var(--m2)"/>
+    <path d="M33 42 C33 30 40 23 48 22 C56 23 63 30 63 42 Z" fill="var(--m2)"/>
+    <rect x="34" y="42" width="28" height="13" fill="var(--m2)"/>
+    <path d="M40 55 V50 a3 3 0 0 1 6 0 V55 Z" fill="var(--m1)"/><path d="M50 55 V50 a3 3 0 0 1 6 0 V55 Z" fill="var(--m1)"/>
+  </symbol>
+  <!-- B2 · Pin with the mini skyline -->
+  <symbol id="m-b2" viewBox="0 0 96 96">
+    <path d="M48 92 C48 92 14 60 14 38 a34 34 0 0 1 68 0 C82 60 48 92 48 92 Z" fill="var(--m1)"/>
+    <path d="M27 49 V42 a5.5 5.5 0 0 1 11 0 V49 Z" fill="var(--m3)"/>
+    <path d="M40 49 V38 a8 8 0 0 1 16 0 V49 Z" fill="var(--m2)"/><rect x="46.8" y="22" width="2.4" height="8" fill="var(--m2)"/>
+    <rect x="58" y="41" width="10" height="8" fill="var(--m3)"/>
+    <rect x="25" y="49" width="46" height="3" rx="1" fill="var(--m2)"/>
+  </symbol>
+  <!-- C · Badge: a round seal with three roofs on a gold rule -->
+  <symbol id="m-c" viewBox="0 0 96 96">
+    <circle cx="48" cy="48" r="44" fill="var(--m1)"/>
+    <path d="M22 62 V52 a7 7 0 0 1 14 0 V62 Z" fill="var(--m3)"/>
+    <path d="M36 62 V48 a12 12 0 0 1 24 0 V62 Z" fill="var(--m2)"/><rect x="47" y="28" width="2.5" height="9" fill="var(--m2)"/>
+    <rect x="62" y="50" width="12" height="12" fill="var(--m3)"/>
+    <rect x="18" y="62" width="60" height="3" rx="1" fill="var(--m2)"/>
+  </symbol>
+  <!-- D · Q: a monogram whose tail runs to the destination -->
+  <symbol id="m-d" viewBox="0 0 96 96">
+    <circle cx="44" cy="42" r="26" fill="none" stroke="var(--m1)" stroke-width="11"/>
+    <path d="M58 58 L78 78" fill="none" stroke="var(--m1)" stroke-width="11" stroke-linecap="round"/>
+    <circle cx="80" cy="80" r="9" fill="var(--m2)"/>
+  </symbol>
+  <!-- E · Riddle: a question mark whose dot is a dome -->
+  <symbol id="m-e" viewBox="0 0 96 96">
+    <path d="M32 34 a16 16 0 1 1 24 14 c-6 3.5 -8 7 -8 13" fill="none" stroke="var(--m1)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M38 82 V76 a10 10 0 0 1 20 0 V82 Z" fill="var(--m2)"/>
+    <rect x="34" y="82" width="28" height="4" rx="1.5" fill="var(--m1)"/>
+  </symbol>
+  <!-- F · Route: three stops, the last one a landmark -->
+  <symbol id="m-f" viewBox="0 0 96 96">
+    <path d="M18 78 C30 62 38 70 48 56 S62 36 74 40" fill="none" stroke="var(--m3)" stroke-width="4" stroke-dasharray="6 7" stroke-linecap="round"/>
+    <circle cx="18" cy="78" r="8" fill="var(--m1)"/>
+    <circle cx="48" cy="56" r="6" fill="var(--m1)"/>
+    <path d="M62 40 V30 a12 12 0 0 1 24 0 V40 Z" fill="var(--m2)"/><rect x="72.5" y="14" width="3" height="8" fill="var(--m2)"/>
+    <rect x="59" y="40" width="30" height="4" rx="1.5" fill="var(--m1)"/>
+  </symbol>
+</defs></svg>
+
+<header class="nav"><div class="wrap"><a class="brand" href="../index.html"><svg aria-hidden="true"><use href="#m-a" style="--m1:var(--gold-500);--m3:var(--patina-300)"/></svg>Quest City Tour</a></div></header>
+
+<main class="page"><div class="wrap">
+  <div class="intro">
+    <p class="eyebrow">Logo marks</p>
+    <h1 class="t-display-xl">Six marks to choose from.</h1>
+    <p class="t-lead">All six use only the app's colours and are drawn as one SVG each, so the same file works on the patina band, on the light surface and as a favicon. The wordmark stays Onest 800, the same face as every title in the app.</p>
+  </div>
+
+  <div class="marks">
+    <article class="mark" id="a">
+      <div class="mark-head"><h2>A · Dome</h2><span class="step-no">A</span></div>
+      <div class="swatches"><div class="sw on-dark"><svg><use href="#m-a"/></svg></div><div class="sw on-light"><svg><use href="#m-a"/></svg></div><div class="sw on-gold"><svg><use href="#m-a"/></svg></div></div>
+      <div class="lockup"><svg><use href="#m-a"/></svg>Quest City Tour</div>
+      <div class="sizes on-dark"><span class="s32"><svg><use href="#m-a"/></svg>32</span><span class="s24"><svg><use href="#m-a"/></svg>24</span><span class="s16"><svg><use href="#m-a"/></svg>16</span><span class="tab"><svg><use href="#m-a"/></svg>Quest City Tour</span></div>
+      <p><b>What the app already shows while loading.</b> Calm, instantly Sofia. The simplest shape, and the weakest at 16 px because the cross disappears.</p>
+    </article>
+
+    <article class="mark" id="b">
+      <div class="mark-head"><h2>B · Pin</h2><span class="step-no">B</span></div>
+      <div class="swatches"><div class="sw on-dark"><svg><use href="#m-b"/></svg></div><div class="sw on-light"><svg><use href="#m-b"/></svg></div><div class="sw on-gold"><svg><use href="#m-b"/></svg></div></div>
+      <div class="lockup"><svg><use href="#m-b"/></svg>Quest City Tour</div>
+      <div class="sizes on-dark"><span class="s32"><svg><use href="#m-b"/></svg>32</span><span class="s24"><svg><use href="#m-b"/></svg>24</span><span class="s16"><svg><use href="#m-b"/></svg>16</span><span class="tab"><svg><use href="#m-b"/></svg>Quest City Tour</span></div>
+      <p><b>A place to walk to.</b> The map-pin says "location", the cupola on its drum, with the cross and two arched windows, says "church in Sofia". Redrawn so it no longer reads as a dish cover. Strongest silhouette at favicon size.</p>
+    </article>
+
+    <article class="mark" id="b2">
+      <div class="mark-head"><h2>B2 · Pin + skyline</h2><span class="step-no">B2</span></div>
+      <div class="swatches"><div class="sw on-dark"><svg><use href="#m-b2"/></svg></div><div class="sw on-light"><svg><use href="#m-b2"/></svg></div><div class="sw on-gold"><svg><use href="#m-b2"/></svg></div></div>
+      <div class="lockup"><svg><use href="#m-b2"/></svg>Quest City Tour</div>
+      <div class="sizes on-dark"><span class="s32"><svg><use href="#m-b2"/></svg>32</span><span class="s24"><svg><use href="#m-b2"/></svg>24</span><span class="s16"><svg><use href="#m-b2"/></svg>16</span><span class="tab"><svg><use href="#m-b2"/></svg>Quest City Tour</span></div>
+      <p><b>The same pin holding the hero skyline.</b> Three roofs on the gold rule, so the mark matches the cover screen exactly. Richer at 32 px and above; below 24 px the side roofs blur into the dome.</p>
+    </article>
+
+    <article class="mark" id="c">
+      <div class="mark-head"><h2>C · Badge</h2><span class="step-no">C</span></div>
+      <div class="swatches"><div class="sw on-dark"><svg><use href="#m-c"/></svg></div><div class="sw on-light"><svg><use href="#m-c"/></svg></div><div class="sw on-gold"><svg><use href="#m-c"/></svg></div></div>
+      <div class="lockup"><svg><use href="#m-c"/></svg>Quest City Tour</div>
+      <div class="sizes on-dark"><span class="s32"><svg><use href="#m-c"/></svg>32</span><span class="s24"><svg><use href="#m-c"/></svg>24</span><span class="s16"><svg><use href="#m-c"/></svg>16</span><span class="tab"><svg><use href="#m-c"/></svg>Quest City Tour</span></div>
+      <p><b>The hero skyline as a seal.</b> Three roofs on the gold rule, the same picture as the cover screen. Reads as a stamp or a medal, which suits the leaderboard and the album cover.</p>
+    </article>
+
+    <article class="mark" id="d">
+      <div class="mark-head"><h2>D · Q</h2><span class="step-no">D</span></div>
+      <div class="swatches"><div class="sw on-dark"><svg><use href="#m-d"/></svg></div><div class="sw on-light"><svg><use href="#m-d"/></svg></div><div class="sw on-gold"><svg><use href="#m-d"/></svg></div></div>
+      <div class="lockup"><svg><use href="#m-d"/></svg>Quest City Tour</div>
+      <div class="sizes on-dark"><span class="s32"><svg><use href="#m-d"/></svg>32</span><span class="s24"><svg><use href="#m-d"/></svg>24</span><span class="s16"><svg><use href="#m-d"/></svg>16</span><span class="tab"><svg><use href="#m-d"/></svg>Quest City Tour</span></div>
+      <p><b>A monogram.</b> The Q's tail runs out to a gold destination dot. No Sofia in it, so it travels to any city; less warm than the others.</p>
+    </article>
+
+    <article class="mark" id="e">
+      <div class="mark-head"><h2>E · Riddle</h2><span class="step-no">E</span></div>
+      <div class="swatches"><div class="sw on-dark"><svg><use href="#m-e"/></svg></div><div class="sw on-light"><svg><use href="#m-e"/></svg></div><div class="sw on-gold"><svg><use href="#m-e"/></svg></div></div>
+      <div class="lockup"><svg><use href="#m-e"/></svg>Quest City Tour</div>
+      <div class="sizes on-dark"><span class="s32"><svg><use href="#m-e"/></svg>32</span><span class="s24"><svg><use href="#m-e"/></svg>24</span><span class="s16"><svg><use href="#m-e"/></svg>16</span><span class="tab"><svg><use href="#m-e"/></svg>Quest City Tour</span></div>
+      <p><b>"The answer is a place."</b> A question mark whose dot is a dome: the whole game in one glyph. Playful; the dome needs 24 px or more to read.</p>
+    </article>
+
+    <article class="mark" id="f">
+      <div class="mark-head"><h2>F · Route</h2><span class="step-no">F</span></div>
+      <div class="swatches"><div class="sw on-dark"><svg><use href="#m-f"/></svg></div><div class="sw on-light"><svg><use href="#m-f"/></svg></div><div class="sw on-gold"><svg><use href="#m-f"/></svg></div></div>
+      <div class="lockup"><svg><use href="#m-f"/></svg>Quest City Tour</div>
+      <div class="sizes on-dark"><span class="s32"><svg><use href="#m-f"/></svg>32</span><span class="s24"><svg><use href="#m-f"/></svg>24</span><span class="s16"><svg><use href="#m-f"/></svg>16</span><span class="tab"><svg><use href="#m-f"/></svg>Quest City Tour</span></div>
+      <p><b>A chain of stops.</b> Two dots, a dashed walk, a landmark at the end: the ordered quest. Most "product", least compact; the dashes vanish below 24 px.</p>
+    </article>
+  </div>
+
+  <div class="how">
+    <h2 class="t-title">After you pick one</h2>
+    <ol>
+      <li>It becomes <code>assets/logo.svg</code>, <code>favicon.svg</code>, a 180 px <code>apple-touch-icon.png</code> and the mark in the OG image.</li>
+      <li>The nav, the footer and the closing card of the video switch to it; the app's loading mark can follow in a separate PR.</li>
+      <li>Shortlist suggestion: B (recommended) for recognisability at small sizes, B2 if you prefer the skyline inside the pin, C if you want the hero skyline everywhere, A if nothing should change.</li>
+    </ol>
+  </div>
+</div></main>
+</body>
+</html>
