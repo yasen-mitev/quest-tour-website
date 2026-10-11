@@ -6,7 +6,7 @@ what hosts get, the surprise album, and the legal pages. No framework, no build 
 ## Layout
 
 ```
-site.config.json   everything site-specific: name, URL, city, host, mail addresses, app URL, legal dates
+site.config.json   everything site-specific: name, URL, city, app URL, legal dates
 src/*.html         page templates ({{section.key}} placeholders)
 build.py           renders src/*.html into the root; fails on an unknown placeholder
 scripts/dev.sh     builds, serves the root on localhost, prints the URLs to check, opens the home page

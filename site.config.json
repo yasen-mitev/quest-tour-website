@@ -7,24 +7,12 @@
     "city": "Sofia",
     "version": "0.1.0"
   },
-  "host": {
-    "name": "[Host name]",
-    "organisation": "[Organisation, if any]",
-    "address": "[Postal address], Sofia, Bulgaria"
-  },
-  "mail": {
-    "contact": "hello@quest-tour.example",
-    "privacy": "privacy@quest-tour.example",
-    "legal": "legal@quest-tour.example"
-  },
   "app": {
     "url": "https://app.quest-tour.example",
     "repo": "https://github.com/yasen-mitev/quest-tour"
   },
   "legal": {
-    "updated": "9 October 2026",
-    "log_retention_days": "30",
-    "hosting": "[Hosting provider and region]",
-    "email_provider": "[Email provider]"
+    "updated": "11 October 2026",
+    "log_retention_days": "30"
   }
 }
