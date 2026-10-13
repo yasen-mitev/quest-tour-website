@@ -28,6 +28,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+main > section[id] { scroll-margin-top: 80px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
 body { margin: 0; background: var(--surface); color: var(--ink); font: 400 17px/26px var(--font-sans); font-variant-numeric: tabular-nums; }
 img, svg { max-width: 100%; }
