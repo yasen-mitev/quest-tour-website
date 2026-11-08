@@ -431,7 +431,7 @@
       </details>
       <details>
         <summary>Can I book a quest for my group?<svg aria-hidden="true"><use href="#i-plus"/></svg></summary>
-        <div>It is not a paid service. We run quests for friends and colleagues who visit Sofia; if you are one of them, your host sends you the team link. Everything else is in the <a href="#contact">contact section</a>.</div>
+        <div>It is not a paid service. We run quests for friends and colleagues who visit Sofia; if you are one of them, send a request from the <a href="#contact">contact section</a> with the game, the day and your team names. We approve it by hand and send each team its link.</div>
       </details>
     </div>
   </div>
@@ -443,8 +443,45 @@
     <svg class="curtain-art" aria-hidden="true"><use href="#curtain-art"/></svg>
     <p class="eyebrow eyebrow--kicker">Visiting Sofia</p>
     <h2 class="t-display-xl">Coming to Sofia? Ask for a link.</h2>
-    <p class="t-lead">We host the quest for friends and colleagues who visit. Reach out on the project's GitHub with your dates and the size of your group, and a team link arrives before you land.</p>
-    <div class="hero-actions"><a class="btn btn--gold" href="https://github.com/yasen-mitev/quest-tour">Find us on GitHub <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+    <p class="t-lead">We host the quest for friends and colleagues who visit. Tell us the game, the day and your team names. We approve each request by hand and send every team its link before you play.</p>
+    <p class="req-fallback t-lead" id="request-fallback">The request form needs JavaScript and a working connection to the app. Without them, reach out on the project's GitHub with your dates and the size of your group, and a team link arrives before you land.
+      <a class="btn btn--gold" href="https://github.com/yasen-mitev/quest-tour">Find us on GitHub <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+    <form class="req" id="request-form" data-api="https://app.quest-tour.example" data-terms-version="8 November 2026" data-max-teams="10" hidden>
+      <label class="field"><span class="field-label">Game</span>
+        <select name="game_key" required><option value="">Choose a game</option></select></label>
+      <p class="t-caption req-intro" id="game-intro" hidden></p>
+      <label class="field"><span class="field-label">Play date</span>
+        <input type="date" name="play_date" required></label>
+      <div id="request-teams" class="req-teams">
+        <fieldset class="team-row">
+          <legend class="team-row__title">Team 1</legend>
+          <label class="field"><span class="field-label">Team name</span>
+            <input type="text" name="team_name" maxlength="200" autocomplete="off" required></label>
+          <label class="field"><span class="field-label">Team key</span>
+            <input type="text" name="team_key" maxlength="100" pattern="[a-z0-9][a-z0-9\-]*" autocomplete="off" autocapitalize="none" spellcheck="false" required>
+            <span class="field-hint">A short id for your team: lowercase letters, digits and dashes, for example red-foxes.</span></label>
+          <label class="field"><span class="field-label">Players (optional)</span>
+            <input type="number" name="team_participants" min="1" max="500" inputmode="numeric"></label>
+          <button class="btn btn--ghost team-row__remove" type="button" hidden>Remove this team</button>
+        </fieldset>
+      </div>
+      <button class="btn btn--ghost req-add" id="add-team" type="button">Add another team</button>
+      <label class="field"><span class="field-label">Your name</span>
+        <input type="text" name="contact_name" maxlength="200" autocomplete="name" required></label>
+      <label class="field"><span class="field-label">Email</span>
+        <input type="email" name="contact_email" maxlength="254" autocomplete="email"></label>
+      <label class="field"><span class="field-label">Phone</span>
+        <input type="tel" name="contact_phone" maxlength="32" autocomplete="tel"></label>
+      <p class="t-caption req-hint">Give an email, a phone number or both, so we can send you the team links.</p>
+      <label class="field"><span class="field-label">Message (optional)</span>
+        <textarea name="message" rows="4" maxlength="2000"></textarea></label>
+      <label class="field hp" aria-hidden="true"><span class="field-label">Website</span>
+        <input type="text" name="website" maxlength="200" tabindex="-1" autocomplete="off"></label>
+      <label class="check"><input type="checkbox" name="terms_accepted" required>
+        <span>I agree that our team data and the photos taken during the game are stored as described in the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy policy</a>.</span></label>
+      <button class="btn btn--gold" type="submit">Send request</button>
+      <p class="req-status" id="request-status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -463,6 +500,7 @@
   <div class="wrap footer-foot"><span>© 2026 Quest City Tour</span><span class="t-mono">site v0.1.0</span></div>
 </footer>
 
+<script src="assets/request-form.js" defer></script>
 <script>
   (function () {
     var btn = document.querySelector('.nav-toggle'), menu = document.getElementById('menu');

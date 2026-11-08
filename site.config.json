@@ -12,7 +12,8 @@
     "repo": "https://github.com/yasen-mitev/quest-tour"
   },
   "legal": {
-    "updated": "11 October 2026",
-    "log_retention_days": "30"
+    "updated": "8 November 2026",
+    "log_retention_days": "30",
+    "request_retention_days": "30"
   }
 }
