@@ -192,6 +192,36 @@ h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
 .curtain .t-lead { max-width: 48ch; opacity: .92; }
 .curtain-art { position: absolute; right: 0; top: 0; width: min(390px, 50%); height: 100%; pointer-events: none; }
 
+/* Request form (contact band): light fields on the dark band, errors in the theatre tones */
+.req { position: relative; display: grid; gap: var(--space-4); width: min(100%, 640px); }
+.req[hidden], .req-fallback[hidden], .req [hidden] { display: none; }
+.req-fallback { display: grid; gap: var(--space-4); justify-items: start; }
+.req .field { display: grid; gap: var(--space-1); }
+.req .field-label { font: 700 15px/20px var(--font-sans); color: var(--gold-300); }
+.req input[type="text"], .req input[type="date"], .req input[type="email"], .req input[type="tel"], .req input[type="number"], .req select, .req textarea {
+  width: 100%; min-height: var(--tap-min); padding: var(--space-2) var(--space-3); border: 2px solid var(--patina-300); border-radius: var(--radius-md);
+  background: var(--surface-raised); color: var(--ink); font: 400 17px/26px var(--font-sans); }
+.req textarea { resize: vertical; }
+.req input[aria-invalid="true"], .req select[aria-invalid="true"], .req textarea[aria-invalid="true"] { border-color: var(--theatre-500); }
+.req :focus-visible { outline-color: var(--gold-300); }
+.req .field-hint, .req .req-hint, .req .req-intro { color: var(--patina-50); }
+.req .field-error { color: var(--theatre-100); font: 700 15px/20px var(--font-sans); }
+.req .field-error::before { content: "\2715\00a0"; }
+.req-teams { display: grid; gap: var(--space-4); }
+.req .team-row { display: grid; gap: var(--space-3); margin: 0; padding: var(--space-4); border: 2px solid var(--patina-600); border-radius: var(--radius-lg); }
+.req .team-row__title { padding-inline: var(--space-2); font: 700 17px/22px var(--font-sans); color: var(--gold-300); }
+.req .team-row__remove { justify-self: start; }
+.req .req-add { justify-self: start; }
+.req .check { display: flex; align-items: flex-start; gap: var(--space-3); min-height: var(--tap-min); }
+.req .check input { flex: none; width: var(--space-5); height: var(--space-5); margin: var(--space-1) 0 0; accent-color: var(--gold-500); }
+.req .check a { color: var(--gold-300); }
+.req .btn[type="submit"] { justify-self: start; }
+.req .btn:disabled { opacity: .6; cursor: progress; }
+.req-status { min-height: var(--space-5); font-weight: 700; }
+.req-status.is-error { color: var(--theatre-100); }
+.req-status.is-ok { color: var(--gold-300); }
+.hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
 /* Footer */
 .footer { background: var(--accent-strong); color: var(--ink-inverse); border-top: 2px solid var(--gold-500); padding-block: var(--space-7) var(--space-6); }
 .footer .wrap { display: grid; grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr)); gap: var(--space-6); }

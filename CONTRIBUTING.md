@@ -39,9 +39,10 @@ python3 build.py                 # must succeed — unknown placeholders fail th
 git diff --exit-code             # the committed pages must already be regenerated
 ```
 
-CI runs exactly these checks (plus a grep that no `{{` placeholder survived rendering) and fails if
-the committed pages are out of date. Then open the site locally and read the pages you changed —
-there is no test suite, so eyes on the content are part of the checklist:
+CI runs exactly these checks (plus a grep that no `{{` placeholder survived rendering and the unit
+tests, `python3 test/anchor-scroll-offset.py && python3 test/request-form.py`) and fails if the
+committed pages are out of date. Then open the site locally and read the pages you changed — the
+tests cover structure, not wording, so eyes on the content are part of the checklist:
 
 - the home page, the privacy page, and the terms page
 - anything driven by `site.config.json` (names, city, mail addresses, app URL, legal dates)
