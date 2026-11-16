@@ -23,6 +23,8 @@ jobs:
           git diff --exit-code -- index.html privacy.html terms.html
       - name: No unresolved placeholders
         run: '! grep -l "{{" index.html privacy.html terms.html'
+      - name: Unit tests
+        run: python3 test/anchor-scroll-offset.py && python3 test/request-form.py
 
   # main only: publish the repository root to GitHub Pages.
   # Needs Pages enabled in the repository settings with "GitHub Actions" as the source.
